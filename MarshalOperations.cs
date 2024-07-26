@@ -7,20 +7,16 @@
 
     /// <summary>
     /// This is a workaround for CollectionsMarshal. An unsafe class so it is hidden by default
-    /// <para>Is not supported for version .NET 5.0+</para>
     /// </summary>
-    //If the .NET version is 5.0 or greater, there is really no reason to use ConvertToSpan for there is a method way better, but it is still available
-
     public static class MarshalOperations
     {
         /// <summary>
         /// It is an alt version of the CollectionMarshal.AsSpan but is created for any software like Unity that are not using .NET 5 or more.
         /// <para>
-        /// The original code can be found in in the CollectionMarshal.AsSpan() in the .NET 7 framework
-        ///  However, there are some differences due to the fact this is written under the Unity API
-        ///  If you are using .Net 5.0+, this method will not be supported</para>
+        /// The original code can be found in the CollectionMarshal.AsSpan() in the .NET 7 framework (Which I referenced it from)
+        ///  However, there could be some differences due to the fact this is written under the Unity API
         /// <remarks>
-        /// Remember this is only used for a cover for CollectionMarshal.AsSpan. Once you update your project to 5.0, this will be unavailable
+        /// Remember this is only used for a cover for CollectionMarshal.AsSpan. Once you update your project to 5.0, you no longer need to use this
         /// </remarks>
         /// </summary>
         /// <typeparam name="T">any unmanaged arbitrary data</typeparam>
